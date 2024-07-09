@@ -7,5 +7,6 @@
         public Boolean IsSuccess { get; set; }
         public T? Item { get; set; }
         public List<T>? Data { get; set; }
+        public int Total { get; set; }
     }
 }

@@ -2,11 +2,11 @@
 using SIG_VETERINARIA.DTOs.DTOs.Auth;
 using SIG_VETERINARIA.DTOs.DTOs.User;
 
-namespace SIG_VETERINARIA.Abstractions.Interfaces.IServices
+namespace SIG_VETERINARIA.Abstractions.Interfaces.IServices.User
 {
     public interface IUserService
     {
-        public Task<ResultDto<UserListResponseDTO>> GetAll();
+        public Task<ResultDto<UserListResponseDTO>> GetAll(UserListRequestDto request);
         public Task<ResultDto<int>> Create(UserCreateRequestDto request);
         public Task<ResultDto<int>> Delete(DeleteDto request);
         public Task<AuthResponseDto> Login(LoginRequestDto request);

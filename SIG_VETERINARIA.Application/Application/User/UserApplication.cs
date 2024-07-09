@@ -1,5 +1,5 @@
-﻿using SIG_VETERINARIA.Abstractions.Interfaces.IApplication;
-using SIG_VETERINARIA.Abstractions.Interfaces.IServices;
+﻿using SIG_VETERINARIA.Abstractions.Interfaces.IApplication.User;
+using SIG_VETERINARIA.Abstractions.Interfaces.IServices.User;
 using SIG_VETERINARIA.DTOs.Common;
 using SIG_VETERINARIA.DTOs.DTOs.Auth;
 using SIG_VETERINARIA.DTOs.DTOs.User;
@@ -25,9 +25,9 @@ namespace SIG_VETERINARIA.Application.Application.User
             return await _userService.Delete(request);
         }
 
-        public async Task<ResultDto<UserListResponseDTO>> GetAll()
+        public async Task<ResultDto<UserListResponseDTO>> GetAll(UserListRequestDto request)
         {
-            return await _userService.GetAll();
+            return await _userService.GetAll(request);
         }
 
         public async Task<AuthResponseDto> Login(LoginRequestDto request)

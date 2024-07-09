@@ -1,28 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SIG_VETERINARIA.Abstractions.Interfaces.IApplication.User;
+using SIG_VETERINARIA.Abstractions.Interfaces.IApplication.Specie;
 using SIG_VETERINARIA.DTOs.Common;
-using SIG_VETERINARIA.DTOs.DTOs.User;
+using SIG_VETERINARIA.DTOs.DTOs.Species;
 
 namespace SIG_VETERINARIA.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class SpecieController : ControllerBase
     {
-        private IUserApplication _UserApplication;
+        private readonly ISpecieApplication _specieApplication;
 
-        public UserController(IUserApplication userApplication)
+        public SpecieController(ISpecieApplication specieApplication)
         {
-            _UserApplication = userApplication;
+            _specieApplication = specieApplication;
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("List")]
-        public async Task<IActionResult> GetAllUsers([FromBody] UserListRequestDto request)
+        public async Task<IActionResult> ListarSpecies([FromQuery] SpecieListRequestDto request)
         {
             try
             {
-                var response = await _UserApplication.GetAll(request);
+                var response = await _specieApplication.GetAll(request);
                 return Ok(response);
             }
             catch (Exception ex)
@@ -33,11 +33,11 @@ namespace SIG_VETERINARIA.API.Controllers
 
         [HttpPost]
         [Route("Create")]
-        public async Task<IActionResult> CreateUser(UserCreateRequestDto request)
+        public async Task<IActionResult> CreateSpecies([FromBody] SpecieCreateRequestDto request)
         {
             try
             {
-                var response = await _UserApplication.Create(request);
+                var response = await _specieApplication.CreateSpecie(request);
                 return Ok(response);
             }
             catch (Exception ex)
@@ -46,13 +46,13 @@ namespace SIG_VETERINARIA.API.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpDelete]
         [Route("Delete")]
-        public async Task<IActionResult> DeleteUser(DeleteDto request)
+        public async Task<IActionResult> DeleteSpecie([FromQuery] DeleteDto request)
         {
             try
             {
-                var response = await _UserApplication.Delete(request);
+                var response = await _specieApplication.DeleteSpecie(request);
                 return Ok(response);
             }
             catch (Exception ex)

@@ -1,28 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SIG_VETERINARIA.Abstractions.Interfaces.IApplication.User;
+using SIG_VETERINARIA.Abstractions.Interfaces.IApplication.Breed;
 using SIG_VETERINARIA.DTOs.Common;
-using SIG_VETERINARIA.DTOs.DTOs.User;
+using SIG_VETERINARIA.DTOs.DTOs.Breeds;
 
 namespace SIG_VETERINARIA.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class BreedController : ControllerBase
     {
-        private IUserApplication _UserApplication;
+        private readonly IBreedApplication _breedApplication;
 
-        public UserController(IUserApplication userApplication)
+        public BreedController(IBreedApplication breedApplication)
         {
-            _UserApplication = userApplication;
+            _breedApplication = breedApplication;
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("List")]
-        public async Task<IActionResult> GetAllUsers([FromBody] UserListRequestDto request)
+        public async Task<IActionResult> ListarBreed([FromQuery] BreedListRequestDto request)
         {
             try
             {
-                var response = await _UserApplication.GetAll(request);
+                var response = await _breedApplication.GetBreeds(request);
                 return Ok(response);
             }
             catch (Exception ex)
@@ -33,11 +33,11 @@ namespace SIG_VETERINARIA.API.Controllers
 
         [HttpPost]
         [Route("Create")]
-        public async Task<IActionResult> CreateUser(UserCreateRequestDto request)
+        public async Task<IActionResult> CreateBreed([FromBody] BreedCreateRequestDto request)
         {
             try
             {
-                var response = await _UserApplication.Create(request);
+                var response = await _breedApplication.CreateBreed(request);
                 return Ok(response);
             }
             catch (Exception ex)
@@ -46,13 +46,13 @@ namespace SIG_VETERINARIA.API.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpDelete]
         [Route("Delete")]
-        public async Task<IActionResult> DeleteUser(DeleteDto request)
+        public async Task<IActionResult> DeleteBreed([FromQuery] DeleteDto request)
         {
             try
             {
-                var response = await _UserApplication.Delete(request);
+                var response = await _breedApplication.DeleteBreed(request);
                 return Ok(response);
             }
             catch (Exception ex)

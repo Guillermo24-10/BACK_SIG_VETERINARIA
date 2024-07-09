@@ -17,4 +17,8 @@
     <ProjectReference Include="..\SIG_VETERINARIA.Services\SIG_VETERINARIA.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Uploads\" />
+  </ItemGroup>
+
 </Project>

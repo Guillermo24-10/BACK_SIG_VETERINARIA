@@ -8,5 +8,6 @@
         public int role_id { get; set; }
         public int state { get; set; }
         public DateTime create_date { get; set; }
+        public int totalRegisters {  get; set; }
     }
 }

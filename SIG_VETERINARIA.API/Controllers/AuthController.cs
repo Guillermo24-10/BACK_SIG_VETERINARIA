@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
-using SIG_VETERINARIA.Abstractions.Interfaces.IApplication;
+using SIG_VETERINARIA.Abstractions.Interfaces.IApplication.User;
 using SIG_VETERINARIA.DTOs.DTOs.Auth;
 
 namespace SIG_VETERINARIA.API.Controllers
