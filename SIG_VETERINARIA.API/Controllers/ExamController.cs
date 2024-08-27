@@ -1,29 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SIG_VETERINARIA.Abstractions.Interfaces.IApplication.Breed;
+using SIG_VETERINARIA.Abstractions.Interfaces.IApplication.Exams;
 using SIG_VETERINARIA.DTOs.Common;
-using SIG_VETERINARIA.DTOs.DTOs.Breeds;
+using SIG_VETERINARIA.DTOs.DTOs.Exams;
 
 namespace SIG_VETERINARIA.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    
-    public class BreedController : ControllerBase
+    public class ExamController : ControllerBase
     {
-        private readonly IBreedApplication _breedApplication;
+        private readonly IExamApplication _examApplication;
 
-        public BreedController(IBreedApplication breedApplication)
+        public ExamController(IExamApplication examApplication)
         {
-            _breedApplication = breedApplication;
+            _examApplication = examApplication;
         }
 
         [HttpGet]
         [Route("List")]
-        public async Task<IActionResult> ListarBreed([FromQuery] BreedListRequestDto request)
+        public async Task<IActionResult> GetExams([FromQuery] ExamListRequestDto request)
         {
             try
             {
-                var response = await _breedApplication.GetBreeds(request);
+                var response = await _examApplication.GetExams(request);
                 return Ok(response);
             }
             catch (Exception ex)
@@ -34,26 +33,26 @@ namespace SIG_VETERINARIA.API.Controllers
 
         [HttpPost]
         [Route("Create")]
-        public async Task<IActionResult> CreateBreed([FromBody] BreedCreateRequestDto request)
+        public async Task<IActionResult> CreateExam([FromBody] ExamCreateRequestDto request)
         {
             try
             {
-                var response = await _breedApplication.CreateBreed(request);
+                var response = await _examApplication.CreateExam(request);
                 return Ok(response);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(ex);
             }
         }
 
         [HttpDelete]
         [Route("Delete")]
-        public async Task<IActionResult> DeleteBreed([FromQuery] DeleteDto request)
+        public async Task<IActionResult> DeleteExam([FromQuery] DeleteDto request)
         {
             try
             {
-                var response = await _breedApplication.DeleteBreed(request);
+                var response = await _examApplication.DeleteExam(request);
                 return Ok(response);
             }
             catch (Exception ex)

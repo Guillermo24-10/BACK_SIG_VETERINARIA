@@ -1,29 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SIG_VETERINARIA.Abstractions.Interfaces.IApplication.Breed;
+using SIG_VETERINARIA.Abstractions.Interfaces.IApplication.Consults;
 using SIG_VETERINARIA.DTOs.Common;
-using SIG_VETERINARIA.DTOs.DTOs.Breeds;
+using SIG_VETERINARIA.DTOs.DTOs.Consults;
 
 namespace SIG_VETERINARIA.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    
-    public class BreedController : ControllerBase
+    public class ConsultController : ControllerBase
     {
-        private readonly IBreedApplication _breedApplication;
+        private readonly IConsultApplication _consultApplication;
 
-        public BreedController(IBreedApplication breedApplication)
+        public ConsultController(IConsultApplication consultApplication)
         {
-            _breedApplication = breedApplication;
+            _consultApplication = consultApplication;
         }
 
         [HttpGet]
         [Route("List")]
-        public async Task<IActionResult> ListarBreed([FromQuery] BreedListRequestDto request)
+        public async Task<IActionResult> GetConsults([FromQuery]ConsultListRequestDto request)
         {
             try
             {
-                var response = await _breedApplication.GetBreeds(request);
+                var response = await _consultApplication.GetConsults(request);
                 return Ok(response);
             }
             catch (Exception ex)
@@ -34,11 +33,11 @@ namespace SIG_VETERINARIA.API.Controllers
 
         [HttpPost]
         [Route("Create")]
-        public async Task<IActionResult> CreateBreed([FromBody] BreedCreateRequestDto request)
+        public async Task<IActionResult> CreateConsult([FromBody] ConsultCreateRequestDto request)
         {
             try
             {
-                var response = await _breedApplication.CreateBreed(request);
+                var response = await _consultApplication.CreateConsult(request);
                 return Ok(response);
             }
             catch (Exception ex)
@@ -49,11 +48,11 @@ namespace SIG_VETERINARIA.API.Controllers
 
         [HttpDelete]
         [Route("Delete")]
-        public async Task<IActionResult> DeleteBreed([FromQuery] DeleteDto request)
+        public async Task<IActionResult> DeleteConsult([FromQuery] DeleteDto request)
         {
             try
             {
-                var response = await _breedApplication.DeleteBreed(request);
+                var response = await _consultApplication.DeleteConsult(request);
                 return Ok(response);
             }
             catch (Exception ex)

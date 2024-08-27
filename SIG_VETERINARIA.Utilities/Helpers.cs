@@ -23,11 +23,33 @@
         public static string SP_CREATE_CLIENTS = "SP_CREATE_CLIENTS";
         public static string SP_DELETE_CLIENT = "SP_DELETE_CLIENT";
         public static string SP_GET_CLIENT = "SP_GET_CLIENT";
+
+        //PATIENT
+        public static string SP_LIST_PATIENTS = "SP_LIST_PATIENTS";
+        public static string SP_CREATE_PATIENT = "SP_CREATE_PATIENT";
+        public static string SP_DELETE_PATIENT = "SP_DELETE_PATIENT";
+        public static string SP_GET_PATIENT = "SP_GET_PATIENT";
+
+        //CONSULTS
+        public static string SP_LIST_CONSULTS = "SP_LIST_CONSULTS";
+        public static string SP_CREATE_CONSULT = "SP_CREATE_CONSULT";
+        public static string SP_DELETE_CONSULT = "SP_DELETE_CONSULT";
+
+        //EXAMS
+        public static string SP_LIST_EXAMS = "SP_LIST_EXAMS";
+        public static string SP_CREATE_EXAMS = "SP_CREATE_EXAMS";
+        public static string SP_DELETE_EXAM = "SP_DELETE_EXAM";
+
+        //DIAGNOSTICO
+        public static string SP_LIST_DIAGNOSTICOS = "SP_LIST_DIAGNOSTICOS";
+        public static string SP_CREATE_DIAGNOSTICO = "SP_CREATE_DIAGNOSTICO";
+        public static string SP_DELETE_DIAGNOSTICO = "SP_DELETE_DIAGNOSTICO";
+
     }
 
     public static class Message
     {
-        public static string SAVE = "Se Guardo Correctamente";
+        public static string SAVE = "Se Guardo o Actualizo Correctamente";
         public static string ERROR_SAVE = "No se pudo guardar";
         public static string UPDATE = "Se Actualizó Correctamente";
         public static string DELETE = "Se Eliminó Correctamente";
