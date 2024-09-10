@@ -45,6 +45,17 @@
         public static string SP_CREATE_DIAGNOSTICO = "SP_CREATE_DIAGNOSTICO";
         public static string SP_DELETE_DIAGNOSTICO = "SP_DELETE_DIAGNOSTICO";
 
+        //CATEGORY
+        public static string SP_LIST_CATEGORIES = "SP_LIST_CATEGORIES";
+        public static string SP_CREATE_CATEGORY = "SP_CREATE_CATEGORY";
+        public static string SP_DELETET_CATEGORY = "SP_DELETET_CATEGORY";
+
+        //PRODUCTS
+        public static string SP_LIST_PRODUCTS = "SP_LIST_PRODUCTS";
+        public static string SP_CREATE_PRODUCTS = "SP_CREATE_PRODUCTS";
+        public static string SP_DELETE_PRODUCT = "SP_DELETE_PRODUCT";
+        public static string SP_DETAIL_PRODUCT = "SP_DETAIL_PRODUCT";
+
     }
 
     public static class Message

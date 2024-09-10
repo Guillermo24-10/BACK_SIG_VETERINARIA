@@ -1,18 +1,22 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SIG_VETERINARIA.Abstractions.Interfaces.IRepository.Breed;
+using SIG_VETERINARIA.Abstractions.Interfaces.IRepository.Categories;
 using SIG_VETERINARIA.Abstractions.Interfaces.IRepository.Clients;
 using SIG_VETERINARIA.Abstractions.Interfaces.IRepository.Consults;
 using SIG_VETERINARIA.Abstractions.Interfaces.IRepository.Diagnostico;
 using SIG_VETERINARIA.Abstractions.Interfaces.IRepository.Exams;
 using SIG_VETERINARIA.Abstractions.Interfaces.IRepository.Patients;
+using SIG_VETERINARIA.Abstractions.Interfaces.IRepository.Products;
 using SIG_VETERINARIA.Abstractions.Interfaces.IRepository.Specie;
 using SIG_VETERINARIA.Abstractions.Interfaces.IRepository.User;
 using SIG_VETERINARIA.Repository.Repository.Breeds;
+using SIG_VETERINARIA.Repository.Repository.Categories;
 using SIG_VETERINARIA.Repository.Repository.Clients;
 using SIG_VETERINARIA.Repository.Repository.Consults;
 using SIG_VETERINARIA.Repository.Repository.Diagnostico;
 using SIG_VETERINARIA.Repository.Repository.Exams;
 using SIG_VETERINARIA.Repository.Repository.Patients;
+using SIG_VETERINARIA.Repository.Repository.Products;
 using SIG_VETERINARIA.Repository.Repository.Species;
 using SIG_VETERINARIA.Repository.Repository.User;
 
@@ -30,6 +34,8 @@ namespace SIG_VETERINARIA.Repository.Extensions
             services.AddScoped<IConsultRepository, ConsultRepository>();
             services.AddScoped<IExamRepository, ExamRepository>();
             services.AddScoped<IDiagnosticoRepository, DiagnosticoRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
 
             return services;
         }
