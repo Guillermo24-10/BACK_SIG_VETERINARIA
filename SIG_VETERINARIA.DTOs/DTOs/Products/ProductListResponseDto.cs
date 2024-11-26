@@ -2,6 +2,7 @@
 {
     public class ProductListResponseDto
     {
+        public int id { get; set; }
         public string name {  get; set; } = string.Empty;
         public decimal cost { get; set; }
         public  decimal price { get; set; }

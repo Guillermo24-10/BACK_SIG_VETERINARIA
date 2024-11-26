@@ -20,7 +20,7 @@ namespace SIG_VETERINARIA.Repository.Repository.Products
 
         public async Task<ResultDto<int>> CreateProduct(ProductCreateRequestDto request)
         {
-            var response = new ResultDto<int>();
+            var response = new ResultDto<int>();    
 
             try
             {

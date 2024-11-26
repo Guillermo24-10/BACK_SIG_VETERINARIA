@@ -56,6 +56,16 @@
         public static string SP_DELETE_PRODUCT = "SP_DELETE_PRODUCT";
         public static string SP_DETAIL_PRODUCT = "SP_DETAIL_PRODUCT";
 
+        //TRATAMIENTOS
+        public static string SP_LIST_TRATAMIENTOS = "SP_LIST_TRATAMIENTOS";
+        public static string SP_CREATE_TRATAMIENTO = "SP_CREATE_TRATAMIENTO";
+        public static string SP_DELETE_TRATAMIENTO = "SP_DELETE_TRATAMIENTO";
+
+        //PRODUCTS-TRATAMIENTOS
+        public static string SP_LIST_PRODUCTS_TRATAMIENTOS = "SP_LIST_PRODUCTS_TRATAMIENTOS";
+        public static string SP_CREATE_PRODUCTS_TRATAMIENTOS = "SP_CREATE_PRODUCTS_TRATAMIENTOS";
+        public static string SP_DELETE_PRODUCTO_TRATAMIENTO = "SP_DELETE_PRODUCTO_TRATAMIENTO";
+
     }
 
     public static class Message

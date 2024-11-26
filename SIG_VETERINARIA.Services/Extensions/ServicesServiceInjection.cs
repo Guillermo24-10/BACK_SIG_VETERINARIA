@@ -9,6 +9,7 @@ using SIG_VETERINARIA.Abstractions.Interfaces.IServices.Exams;
 using SIG_VETERINARIA.Abstractions.Interfaces.IServices.Patients;
 using SIG_VETERINARIA.Abstractions.Interfaces.IServices.Products;
 using SIG_VETERINARIA.Abstractions.Interfaces.IServices.Specie;
+using SIG_VETERINARIA.Abstractions.Interfaces.IServices.Tratamiento;
 using SIG_VETERINARIA.Abstractions.Interfaces.IServices.User;
 using SIG_VETERINARIA.Services.Common;
 using SIG_VETERINARIA.Services.Services.Breed;
@@ -20,6 +21,7 @@ using SIG_VETERINARIA.Services.Services.Exams;
 using SIG_VETERINARIA.Services.Services.Patients;
 using SIG_VETERINARIA.Services.Services.Products;
 using SIG_VETERINARIA.Services.Services.Specie;
+using SIG_VETERINARIA.Services.Services.Tratamientos;
 using SIG_VETERINARIA.Services.Services.User;
 
 namespace SIG_VETERINARIA.Services.Extensions
@@ -39,6 +41,8 @@ namespace SIG_VETERINARIA.Services.Extensions
             services.AddScoped<IDiagnosticoService, DiagnosticoService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ITratamientosService, TratamientoService>();
+            services.AddScoped<IProductsTratamientoService, ProductsTratamientoService>();
 
             return services;
         }
